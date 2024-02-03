@@ -1,13 +1,28 @@
+import {Suspense} from "react";
+import MovieVideos from "@/components/movieVideos";
+import MovieInfo from "@/components/movieInfo";
+
 export const metadata = {
     title: "Movie",
 };
 
-
-export default function Page({params: {id}}) {
-
+export default function Page({params: {id}}: { params: { id: string } }) {
     return (
         <div>
-            <h1>Movie {id}</h1>
+            <Suspense fallback={
+                <div>
+                    <h1>Loading...</h1>
+                </div>
+            }>
+                <MovieInfo id={id}/>
+            </Suspense>
+            <Suspense fallback={
+                <div>
+                    <h1>Loading...</h1>
+                </div>
+            }>
+                <MovieVideos id={id}/>
+            </Suspense>
         </div>
     );
 }
