@@ -1,33 +1,43 @@
-"use client";
-
 import type {Metadata} from "next";
-import {useEffect, useState} from "react";
 
-// export const metadata: Metadata = {
-//     title: "Home",
-// };
+export const metadata: Metadata = {
+    title: "Home",
+};
 
-export default function Page() {
-    const [isLoading, setIsLoading] = useState(true);
-    const [movies, setMovies] = useState([]);
 
-    const fetchMovies = async () => {
-        const response = await fetch("https://nomad-movies.nomadcoders.workers.dev/movies");
-        const data = await response.json();
-        setMovies(data);
-        setIsLoading(false);
-    }
+const URL = "https://nomad-movies.nomadcoders.workers.dev/movies";
 
-    useEffect(() => {
-        fetchMovies();
-    }, []);
+
+export interface Movie {
+    adult: boolean
+    backdrop_path: string
+    genre_ids: number[]
+    id: number
+    original_language: string
+    original_title: string
+    overview: string
+    popularity: number
+    poster_path: string
+    release_date: string
+    title: string
+    video: boolean
+    vote_average: number
+    vote_count: number
+}
+
+const fetchMovies = async (): Promise<Movie[]> => {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const response = await fetch(URL);
+    return await response.json();
+}
+export default async function Page() {
+    const movies = await fetchMovies();
 
     return (
         <div>
             <h1>Home</h1>
-            {isLoading && <p>Loading...</p>}
             <ul>
-                {movies.map(movie => (
+                {movies.map((movie) => (
                     <li key={movie.id}>{movie.title}</li>
                 ))}
             </ul>
