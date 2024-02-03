@@ -1,5 +1,6 @@
 import { env } from 'node:process';
 import {Movie} from "@/interfaces/movie";
+import Image from "next/image";
 
 
 async function fetchMovie(id: string): Promise<Movie> {
@@ -13,8 +14,8 @@ export default async function MovieInfos({id}: { id: string }) {
     return (
         <div>
             <h1>{movie.title}</h1>
-            <p>{movie.overview}</p>]
-            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
+            <p>{movie.overview}</p>
+            <Image priority={true} width={500} height={800}  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title}/>
         </div>
     );
 }

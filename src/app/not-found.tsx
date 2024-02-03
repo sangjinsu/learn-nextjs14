@@ -1,5 +1,3 @@
-import Navigation from "@/components/Navigation";
-
 export const metadata = {
     title: "Page Not Found",
 };

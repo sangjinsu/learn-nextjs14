@@ -16,7 +16,6 @@ export default function Navigation() {
                 <li>
                     <Link href="/about-us">About Us</Link> {path === "/about-us" ? "✨" : ""}
                 </li>
-
             </ul>
         </nav>
     );

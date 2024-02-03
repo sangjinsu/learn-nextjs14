@@ -1,9 +1,6 @@
 import Link from "next/link";
-import { env } from 'node:process';
+import {env} from 'node:process';
 import {Movie} from "@/interfaces/movie";
-
-
-
 
 const fetchMovies = async (): Promise<Movie[]> => {
     const response = await fetch(`${env.API_URL}`);
