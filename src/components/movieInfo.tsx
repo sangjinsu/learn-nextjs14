@@ -1,5 +1,5 @@
-import {Movie} from "@/components/movieInfo";
 import { env } from 'node:process';
+import {Movie} from "@/interfaces/movie";
 
 
 async function fetchMovie(id: string): Promise<Movie> {
