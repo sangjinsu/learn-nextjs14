@@ -1,4 +1,4 @@
-import "./globals.css";
+import "../styles/globals.css";
 import React from "react";
 import type {Metadata} from "next";
 import Navigation from "@/components/navigation";
