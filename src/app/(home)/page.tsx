@@ -1,6 +1,6 @@
 import type {Metadata} from "next";
 import {Suspense} from "react";
-import MovieInfos from "@/components/movieInfos";
+import MovieList from "@/components/movieList";
 
 export const metadata: Metadata = {
     title: "Home",
@@ -15,7 +15,7 @@ export default function Page() {
                     <h1>Loading...</h1>
                 </div>
             }>
-                <MovieInfos/>
+                <MovieList/>
             </Suspense>
         </div>
     );

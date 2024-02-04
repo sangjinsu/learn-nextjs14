@@ -1,14 +1,14 @@
 import {env} from 'node:process';
 import Movie from "./movie";
 import {IMovie} from "@/interfaces/movie";
-import styles from "../styles/home.module.css";
+import styles from "../styles/movieList.module.css";
 
 const fetchMovies = async (): Promise<IMovie[]> => {
     const response = await fetch(`${env.API_URL}`);
     return await response.json();
 }
 
-export default async function MovieInfo() {
+export default async function MovieList() {
 
     const movies = await fetchMovies()
     return (

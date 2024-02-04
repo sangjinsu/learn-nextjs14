@@ -1,0 +1,31 @@
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 1rem;
+    width : 80%;
+    margin: 1rem auto;
+}
+
+.poster {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    place-self: center;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    margin : 1rem;
+    gap : 1rem;
+}
+
+.link {
+    text-decoration: none;
+}
