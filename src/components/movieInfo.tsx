@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "../styles/movieInfo.module.css";
 
 
-async function fetchMovie(id: string): Promise<IMovie> {
+export async function fetchMovie(id: string): Promise<IMovie> {
     const response = await fetch(`${env.API_URL}/${id}`);
     return await response.json();
 }
