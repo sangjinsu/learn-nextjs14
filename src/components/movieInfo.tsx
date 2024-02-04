@@ -1,9 +1,9 @@
 import { env } from 'node:process';
-import {Movie} from "@/interfaces/movie";
+import {IMovie} from "@/interfaces/movie";
 import Image from "next/image";
 
 
-async function fetchMovie(id: string): Promise<Movie> {
+async function fetchMovie(id: string): Promise<IMovie> {
     const response = await fetch(`${env.API_URL}/${id}`);
     return await response.json();
 }

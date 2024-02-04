@@ -1,5 +1,5 @@
 .nav {
-    background-color: red;
+    background-color: lightslategray;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -7,6 +7,17 @@
     padding: 1rem 2rem;
 }
 
-.list {
+.nav ul {
     display: flex;
+    list-style: none;
+}
+
+.nav ul li {
+    margin: 0 1rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.nav ul li:hover {
+    transform: scale(1.1);
 }
